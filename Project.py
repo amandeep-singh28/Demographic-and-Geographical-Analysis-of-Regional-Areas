@@ -335,7 +335,9 @@ plt.show()
 
 #Plotting Histogram For Every Numerical Column
 sns.set_style("whitegrid")
-numerical_columns = df2.select_dtypes(include = ['float64', 'int64']).columns
+exclude_cols = ['State_Code', 'District_Code', 'Sub_District_Code']
+numerical_columns = [col for col in df2.select_dtypes(include=['float64', 'int64'])
+                     .columns if col not in exclude_cols] #List Comprehension
 
 for b in numerical_columns:
     sns.histplot(df2[b], bins=20, kde=True, color = 'skyblue', edgecolor = 'black')
@@ -407,6 +409,10 @@ outliers_iqr = ((df2[numerical_columns] < lower_bound) | (df2[numerical_columns]
 print('\nOutliers detected using IQR method\n', outliers_iqr)
 
 #Plotting BOXPLOT
+exclude_cols = ['State_Code', 'District_Code', 'Sub_District_Code']
+numerical_columns = [col for col in df2.select_dtypes(include=['float64', 'int64'])
+                     .columns if col not in exclude_cols] #List Comprehension
+
 plt.figure(figsize=(14, 7))
 sns.boxplot(data=df2[numerical_columns], palette="Set3", linewidth=1.5, fliersize=4)
 plt.xticks(rotation=45, ha='right')
