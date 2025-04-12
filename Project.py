@@ -52,7 +52,7 @@ data.to_csv('Clean_Project.csv', index = False) #Saving data into another file
 #Loading the Clean Dataset (But the column names are not in a proper way)
 df1 = pd.read_csv(r'E:\Files For Visual Studio\Data Science\Clean_Project.csv')
 
-print("f\nFew Rows Of The Clean_Project:\n{df1.head()}")
+print(f"\nFew Rows Of The Clean_Project:\n{df1.head()}")
 
 df1 = df1.drop(df1.index[0]) #Dropping the First row as it contains the column number like(1, 2, --)
 
@@ -153,7 +153,9 @@ states/districts to identify high and low-density regions.'''
 sns.set_style("whitegrid")
 
 #Top 10 States via Total_Population
-top10 = df2.sort_values('Total_Population', ascending = False).head(10)
+df2_filtered = df2[df2['Name'] != 'India'] #Since India is not a State
+
+top10 = df2_filtered.sort_values('Total_Population', ascending = False).head(10)
 plt.figure(figsize=(10, 6))
 sns.barplot(x = 'Name', y ='Total_Population', data = top10, palette = 'coolwarm', errorbar = None,
             edgecolor = 'black') #Palette -> Coloring
@@ -315,11 +317,15 @@ print(f'\nCorrelation between Area and Total Population: {correlation_value:.2f}
 
 
 #HEATMAP -> For The Correlation Of All The Numerical Columns
-plt.figure(figsize = (14, 10))
+plt.figure(figsize = (12, 19))
+df2_corr = df2.drop(columns=['State_Code', 'District_Code', 'Sub_District_Code'])
 
-corr_matrix = df2.corr(numeric_only = True) 
-sns.heatmap(corr_matrix, annot = True, linewidths = 1, cmap = 'Set1', fmt = ".2f", square = True,
-            cbar_kws={"shrink": 0.75}, annot_kws={"size": 10}) 
+
+corr_matrix = df2_corr.corr(numeric_only = True)
+print(corr_matrix.isna().sum())
+
+sns.heatmap(corr_matrix, annot = True, linewidths = 1, cmap = 'coolwarm', fmt = ".2f", square = True,
+            cbar_kws={"shrink": 0.75}, annot_kws={"size": 8}) 
 plt.title('Correlation Heatmap (Seaborn)')
 plt.xticks(rotation=45, ha='right') 
 plt.yticks(rotation=0)
