@@ -77,24 +77,32 @@
 <h2>4. Analysis on Dataset</h2>
 
 <h3>1. Population Density Trends</h3>
-<p><b>Introduction:</b> Compare population density to find highly vs sparsely populated areas.</p>
-<p><b>Functions & Tools:</b> sort_values(), head(), sns.barplot(), plt.tight_layout()</p>
-<p><b>Findings:</b> Dense: Uttar Pradesh, Sparse: Bitra</p>
+<ul>
+<li><p><b>Introduction:</b> Compare population density to find highly vs sparsely populated areas.</p></li>
+<li><p><b>Functions & Tools:</b> sort_values(), head(), sns.barplot(), plt.tight_layout()</p></li>
+<li><p><b>Findings:</b> Dense: Uttar Pradesh, Sparse: Bitra</p></li>
+</ul>
 
 <h3>2. Urban and Rural Populations</h3>
-<p><b>Introduction:</b> Contrast rural vs urban populations, households, and land use.</p>
-<p><b>Functions & Tools:</b> groupby(), sum(), sns.barplot()</p>
-<p><b>Findings:</b> Urban areas have more people; rural areas cover more land.</p>
+<ul>
+<li><p><b>Introduction:</b> Contrast rural vs urban populations, households, and land use.</p></li>
+<li><p><b>Functions & Tools:</b> groupby(), sum(), sns.barplot()</p></li>
+<li><p><b>Findings:</b> Urban areas have more people; rural areas cover more land.</p></li>
+</ul>
 
 <h3>3. Gender Distribution</h3>
-<p><b>Introduction:</b> Understand gender ratios in different regions.</p>
-<p><b>Functions & Tools:</b> groupby(), sns.barplot()</p>
-<p><b>Findings:</b> Gender ratio is balanced in all areas.</p>
+<ul>
+<li><p><b>Introduction:</b> Understand gender ratios in different regions.</p></li>
+<li><p><b>Functions & Tools:</b> groupby(), sns.barplot()</p></li>
+<li><p><b>Findings:</b> Gender ratio is balanced in all areas.</p></li>
+</ul>
 
 <h3>4. Household and Population Relationship</h3>
-<p><b>Introduction:</b> Understand how households relate to total population.</p>
-<p><b>Functions & Tools:</b> sns.scatterplot()</p>
-<p><b>Findings:</b> Strong positive correlation.</p>
+<ul>
+<li><p><b>Introduction:</b> Understand how households relate to total population.</p></li>
+<li><p><b>Functions & Tools:</b> sns.scatterplot()</p></li>
+<li><p><b>Findings:</b> Strong positive correlation.</p></li>
+</ul>
 
 <h3>5. Geographic Area vs Population Size</h3>
 <p><b>Introduction:</b> Evaluate if more land means more people.</p>
@@ -102,9 +110,11 @@
 <p><b>Findings:</b> High correlation (~0.95)</p>
 
 <h3>6. Hypothesis Testing and Outlier Detection</h3>
-<p><b>Introduction:</b> Statistical differences between urban and rural densities.</p>
-<p><b>Functions & Tools:</b> z-test, IQR method, boxplots</p>
-<p><b>Findings:</b> Urban areas significantly denser; many outliers in dense areas.</p>
+<ul>
+  <li><p><b>Introduction:</b> Statistical differences between urban and rural densities.</p></li>
+  <li><p><b>Functions & Tools:</b> z-test, IQR method, boxplots</p></li>
+  <li><p><b>Findings:</b> Urban areas significantly denser; many outliers in dense areas.</p></li>
+</ul>
 
 <br>
 
